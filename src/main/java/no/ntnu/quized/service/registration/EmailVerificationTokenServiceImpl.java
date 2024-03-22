@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -36,8 +37,9 @@ public class EmailVerificationTokenServiceImpl implements EmailVerificationToken
 
     @Override
     public EmailVerificationToken getVerificationToken(String token) {
-        return verificationTokenRepository.findByToken(token)
-                .orElseThrow(() -> new IllegalArgumentException("Token not found"));
+        Optional<EmailVerificationToken> tokenOptional = verificationTokenRepository.findByToken(token);
+        return tokenOptional.orElseThrow(() -> new IllegalArgumentException("Token not found"));
+
     }
 
 }
