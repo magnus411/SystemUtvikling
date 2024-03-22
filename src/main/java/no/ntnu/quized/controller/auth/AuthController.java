@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import no.ntnu.quized.model.DTO.auth.AuthResponse;
 import no.ntnu.quized.model.DTO.auth.LoginRequest;
 import no.ntnu.quized.model.DTO.auth.MessageResponse;
@@ -17,6 +18,7 @@ import no.ntnu.quized.service.AuthService;
 @RestController
 @RequestMapping(value = "/auth")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
 
     private final AuthService authService;
@@ -28,6 +30,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+        log.info("Login attempt with username: {}", request.getUsername());
+
         return ResponseEntity.ok(authService.login(request));
     }
 
