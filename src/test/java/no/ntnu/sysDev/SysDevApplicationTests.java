@@ -1,10 +1,10 @@
-package no.ntnu.quized;
+package no.ntnu.sysDev;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuizedApplicationTests {
+class SysDevApplicationTests {
 
 	@Test
 	void contextLoads() {
