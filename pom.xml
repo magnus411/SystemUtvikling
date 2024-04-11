@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>no.ntnu</groupId>
-	<artifactId>quized</artifactId>
+	<artifactId>sysDev</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>quized</name>
 	<description>A backend for a quiz application</description>
